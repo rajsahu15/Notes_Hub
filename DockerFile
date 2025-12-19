@@ -1,0 +1,14 @@
+# Use Tomcat 10.1 with OpenJDK 21
+FROM tomcat:10.1-jdk21-openjdk
+
+# Clean out the default Tomcat apps
+RUN rm -rf /usr/local/tomcat/webapps/*
+
+# Copy your WAR file into the container
+# Renaming to ROOT.war makes your app the default homepage
+COPY Notes_Hub.war /usr/local/tomcat/webapps/ROOT.war
+
+# Port 8080 is the standard for Tomcat
+EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
