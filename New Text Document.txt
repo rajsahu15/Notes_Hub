@@ -1,0 +1,7 @@
+git push -u origin main
+git remote add origin https://github.com/rajsahu15/Notes_Hub.git
+git branch -M main
+git commit -m "first commit"
+git add README.md
+git init
+echo "# Notes_Hub" >> README.md
